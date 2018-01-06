@@ -1,0 +1,113 @@
+System view commands:
+  aaa                      Specify AAA configuration
+  acl                      Specify acl configuration information
+  archive                  Specify archive settings
+  arp                      Specify ARP configuration information
+  attack-defense           Specify attack defense policy configuration
+                           information
+  bootrom-update           bootrom update
+  burst-mode               Specify burst mode
+  clock                    Specify the system clock
+  cluster                  Specify cluster configuration information
+  command-alias            Specify command alias
+  command-privilege        Specify the command level
+  configuration            Specify configuration settings
+  copyright-info           Copyright information configuration
+  cut                      Cut connection
+  ddos                     Ddos function
+  delete                   Delete function
+  dhcp                     DHCP configuration subcommands
+  dhcp-snooping            DHCP Snooping
+  display                  Display current system information
+  dns                      Specify domain name system
+  domain                   Add domain or modify domain attributes
+  dot1x                    Specify 802.1X configuration information
+  execute                  Batch Command
+  file                     Specify file system configuration information
+  fips                     Federal Information Processing Standards (FIPS)
+                           140-2 module
+  ftp                      Specify FTP configuration information
+  garp                     Generic Attribute Registration Protocol
+  gratuitous-arp-learning  Gratuitous Arp learning function
+  gratuitous-arp-sending   Sending gratuitous-arp packet when receiving
+                           different sub-network arp packet function
+  gvrp                     GARP VLAN Registration Protocol
+  ha                       Enable/Disable HA Version check of Master and Slave
+  habp                     Specify HABP configuration information
+  header                   Specify the login banner
+  hotkey                   Specify hotkey configuration information
+  hwtacacs                 Specify HWTACACS server
+  igmp-snooping            IGMP snooping
+  info-center              Specify information center configuration information
+  interface                Specify the interface configuration view
+  ip                       Specify IP configurations for the system
+  ipv6                     Enable IPv6 functionality
+  irf                      IRF Stack
+  job                      Schedule a system task
+  jumboframe               Jumboframe command
+  lacp                     Configure LACP Protocol
+  link-aggregation         Link aggregation group
+  lldp                     Link Layer Discovery Protocol(802.1ab)
+  local-user               Specify local user configuration information
+  logfile                  Specify log file configuration
+  loopback-detection       Detect if loopback exists
+  mac-address              Configure MAC address
+  mac-authentication       MAC authentication configuration
+  mac-flapping             Configure MAC-Flapping function
+  mac-vlan                 Specify the MAC VLAN configuration information
+  mirroring-group          Specify mirroring-group
+  mld-snooping             Enter mld-snooping view
+  multicast-vlan           Multicast VLAN
+  ndp                      Neighbor discovery protocol
+  ntdp                     Specify NTDP configuration information
+  ntp-service              Specify NTP(Network Time Protocol) configuration
+                           information
+  ospf                     Open Shortest Path First (OSPF)
+  password-control         Specify password control
+  password-recovery        Password recovery function
+  patch                    Specify patch configuration information
+  ping                     Ping function
+  pki                      Specify PKI module configuration information
+  port-group               Port group
+  port-security            Specify port-security configuration information
+  public-key               Specify public-key module configuration information
+  qos                      Command of QoS(Quality of Service)
+  quit                     Exit from current command view
+  radius                   Specify RADIUS configuration information
+  return                   Exit to User View
+  rip                      Specify RIP(Routing Information Protocol)
+                           configuration information
+  rmon                     Specify RMON
+  router                   Configure Router information
+  save                     Save current configuration
+  sftp                     Specify SFTP service attribute
+  shutdown-interval        ShutDown Detection
+  slave                    Specify HA command configuration information
+  snmp-agent               Specify SNMP(Simple Network Management Protocol)
+                           configuration information
+  ssh                      Specify SSH (secure shell) configuration information
+  ssl                      Specify SSL (Secure Socket Layer) configuration
+                           information
+  stack                    Switch stack system
+  stp                      Spanning tree protocol
+  super                    Specify super configuration information
+  sysname                  Specify the host name
+  system-failure           System failure handling method
+  system-guard             System guard function
+  tcp                      Specify TCP(Transmission Control Protocol)
+                           configuration information
+  telnet                   Specify TELNET configuration information
+  tftp                     Specify TFTP configuration information
+  tftp-server              TFTP Server
+  time-range               Specify time-range configuration information
+  tracert                  Trace route function
+  traffic                  Specify traffic configuration information
+  transceiver              Transceiver information
+  undo                     Cancel current setting
+  user-group               Specify user group configuration information
+  user-interface           Configure the user terminal interface
+  user-profile             User profile
+  vlan                     Configure VLAN
+  vlan-group               Configure a VLAN group
+  vlan-mac-address         Configure VLAN MAC address
+  voice                    Specify voice VLAN

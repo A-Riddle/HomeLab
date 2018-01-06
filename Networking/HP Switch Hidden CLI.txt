@@ -1,0 +1,7 @@
+1. SSH to switch
+2. _cmdline-mode on
+3. Y
+4. Jinhua1920unauthorized
+5. System-view
+
+https://glazenbakje.wordpress.com/2012/08/21/hp-v1910-secret-commando-list-how-to-enable-it/
