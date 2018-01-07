@@ -1,0 +1,54 @@
+-function Send-WOL 
+-{ 
+-<# 
+-  .SYNOPSIS 
+-    Send a WOL packet to a broadcast address 
+-  .PARAMETER mac 
+-   The MAC address of the device that need to wake up 
+-  .PARAMETER ip 
+-   The IP address where the WOL packet will be sent to (Default: 255.255.255.255) 
+-  .PARAMETER port 
+-   The UDP-Port where the WOL packet will be sent to (Default: 9) 
+-  .EXAMPLE 
+-   Send-WOL 001132212D11 
+-   Shortest possible command 
+-  .EXAMPLE 
+-   Send-WOL -mac 00-11-32-21-2D-11 -port 7 
+-   Define an alternative UPD-Port 
+-  .EXAMPLE 
+-   Send-WOL -mac 00:11:32:21:2d:11 -ip 192.168.8.255 
+-   Define a specific Broadcast-Address 
+-  .NOTES
+-   https://gallery.technet.microsoft.com/scriptcenter/Send-WOL-packet-using-0638be7b
+-#> 
+- 
+-param( 
+-    [Parameter(Mandatory=$True,Position=1,ValueFromPipeline=$True)] 
+-    [ValidatePattern('(^([0-9a-fA-F]{2}[\.:-]{0,1}){5}[0-9a-fA-F]{2}$)|(^([0-9a-fA-F]{4}\.[0-9a-fA-F]{4}\.[0-9a-fA-F]{4})$)')] 
+-    [string]$mac, 
+-    [string]$ip="255.255.255.255", 
+-    [int]$port=9 
+-) 
+-    $broadcast = [Net.IPAddress]::Parse($ip) 
+- 
+-    $mac=$mac.ToUpper() #Design-Only - no technical reasons for that  
+-    $mac=(($mac.replace(":","")).replace("-","")).replace(".","") 
+-    $target=0,2,4,6,8,10 | % {[convert]::ToByte($mac.substring($_,2),16)} 
+-    $packet = (,[byte]255 * 6) + ($target * 16) 
+- 
+-    $UDPclient = new-Object System.Net.Sockets.UdpClient 
+-    $UDPclient.Connect($broadcast,$port) 
+-    [void]$UDPclient.Send($packet, 102) 
+-     
+-    #User Output 
+-    0,2,4,6,8 | % {$OutMac+="$($mac.substring($_,2))`:"} 
+-    $OutMac+=$Mac.substring(10,2) 
+-    Write-Output "A Magic-Packet was send to $ip`:$port to wake up '$OutMac'" 
+-}
+-
+-Send-WOL  b8:ae:ed:74:ab:92 #Nuc1
+-Send-WOL  b8:ae:ed:74:a8:2f #Nuc2
+-Send-WOL  b8:ae:ed:74:ab:cc #Nuc3
+-Send-WOL  b8:ae:ed:74:a8:38 #Nuc4
+-#Send-WOL b8:ae:ed:74:ab:cc #HDekstop
+-#Send-WOL 1C-6F-65-D4-07-0C #ADekstop
